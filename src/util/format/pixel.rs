@@ -480,7 +480,6 @@ impl From<AVPixelFormat> for Pixel {
     fn from(value: AVPixelFormat) -> Self {
         match value {
             AV_PIX_FMT_NONE => Pixel::None,
-
             AV_PIX_FMT_YUV420P => Pixel::YUV420P,
             AV_PIX_FMT_YUYV422 => Pixel::YUYV422,
             AV_PIX_FMT_RGB24 => Pixel::RGB24,
@@ -512,12 +511,10 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_RGB4_BYTE => Pixel::RGB4_BYTE,
             AV_PIX_FMT_NV12 => Pixel::NV12,
             AV_PIX_FMT_NV21 => Pixel::NV21,
-
             AV_PIX_FMT_ARGB => Pixel::ARGB,
             AV_PIX_FMT_RGBA => Pixel::RGBA,
             AV_PIX_FMT_ABGR => Pixel::ABGR,
             AV_PIX_FMT_BGRA => Pixel::BGRA,
-
             AV_PIX_FMT_GRAY16BE => Pixel::GRAY16BE,
             AV_PIX_FMT_GRAY16LE => Pixel::GRAY16LE,
             AV_PIX_FMT_YUV440P => Pixel::YUV440P,
@@ -535,17 +532,14 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_VDPAU_VC1 => Pixel::VDPAU_VC1,
             AV_PIX_FMT_RGB48BE => Pixel::RGB48BE,
             AV_PIX_FMT_RGB48LE => Pixel::RGB48LE,
-
             AV_PIX_FMT_RGB565BE => Pixel::RGB565BE,
             AV_PIX_FMT_RGB565LE => Pixel::RGB565LE,
             AV_PIX_FMT_RGB555BE => Pixel::RGB555BE,
             AV_PIX_FMT_RGB555LE => Pixel::RGB555LE,
-
             AV_PIX_FMT_BGR565BE => Pixel::BGR565BE,
             AV_PIX_FMT_BGR565LE => Pixel::BGR565LE,
             AV_PIX_FMT_BGR555BE => Pixel::BGR555BE,
             AV_PIX_FMT_BGR555LE => Pixel::BGR555LE,
-
             #[cfg(all(feature = "ff_api_vaapi", not(feature = "ffmpeg_5_0")))]
             AV_PIX_FMT_VAAPI_MOCO => Pixel::VAAPI_MOCO,
             #[cfg(all(feature = "ff_api_vaapi", not(feature = "ffmpeg_5_0")))]
@@ -554,7 +548,6 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_VAAPI_VLD => Pixel::VAAPI_VLD,
             #[cfg(any(not(feature = "ff_api_vaapi"), feature = "ffmpeg_5_0"))]
             AV_PIX_FMT_VAAPI => Pixel::VAAPI,
-
             AV_PIX_FMT_YUV420P16LE => Pixel::YUV420P16LE,
             AV_PIX_FMT_YUV420P16BE => Pixel::YUV420P16BE,
             AV_PIX_FMT_YUV422P16LE => Pixel::YUV422P16LE,
@@ -564,16 +557,13 @@ impl From<AVPixelFormat> for Pixel {
             #[cfg(feature = "ff_api_vdpau")]
             AV_PIX_FMT_VDPAU_MPEG4 => Pixel::VDPAU_MPEG4,
             AV_PIX_FMT_DXVA2_VLD => Pixel::DXVA2_VLD,
-
             AV_PIX_FMT_RGB444LE => Pixel::RGB444LE,
             AV_PIX_FMT_RGB444BE => Pixel::RGB444BE,
             AV_PIX_FMT_BGR444LE => Pixel::BGR444LE,
             AV_PIX_FMT_BGR444BE => Pixel::BGR444BE,
             AV_PIX_FMT_YA8 => Pixel::YA8,
-
             AV_PIX_FMT_BGR48BE => Pixel::BGR48BE,
             AV_PIX_FMT_BGR48LE => Pixel::BGR48LE,
-
             AV_PIX_FMT_YUV420P9BE => Pixel::YUV420P9BE,
             AV_PIX_FMT_YUV420P9LE => Pixel::YUV420P9LE,
             AV_PIX_FMT_YUV420P10BE => Pixel::YUV420P10BE,
@@ -588,7 +578,6 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_YUV422P9LE => Pixel::YUV422P9LE,
             #[cfg(not(feature = "ffmpeg_4_0"))]
             AV_PIX_FMT_VDA_VLD => Pixel::VDA_VLD,
-
             AV_PIX_FMT_GBRP => Pixel::GBRP,
             AV_PIX_FMT_GBRP9BE => Pixel::GBRP9BE,
             AV_PIX_FMT_GBRP9LE => Pixel::GBRP9LE,
@@ -596,7 +585,6 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_GBRP10LE => Pixel::GBRP10LE,
             AV_PIX_FMT_GBRP16BE => Pixel::GBRP16BE,
             AV_PIX_FMT_GBRP16LE => Pixel::GBRP16LE,
-
             AV_PIX_FMT_YUVA420P9BE => Pixel::YUVA420P9BE,
             AV_PIX_FMT_YUVA420P9LE => Pixel::YUVA420P9LE,
             AV_PIX_FMT_YUVA422P9BE => Pixel::YUVA422P9BE,
@@ -615,42 +603,31 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_YUVA422P16LE => Pixel::YUVA422P16LE,
             AV_PIX_FMT_YUVA444P16BE => Pixel::YUVA444P16BE,
             AV_PIX_FMT_YUVA444P16LE => Pixel::YUVA444P16LE,
-
             AV_PIX_FMT_VDPAU => Pixel::VDPAU,
-
             AV_PIX_FMT_XYZ12LE => Pixel::XYZ12LE,
             AV_PIX_FMT_XYZ12BE => Pixel::XYZ12BE,
             AV_PIX_FMT_NV16 => Pixel::NV16,
             AV_PIX_FMT_NV20LE => Pixel::NV20LE,
             AV_PIX_FMT_NV20BE => Pixel::NV20BE,
-
             AV_PIX_FMT_RGBA64BE => Pixel::RGBA64BE,
             AV_PIX_FMT_RGBA64LE => Pixel::RGBA64LE,
             AV_PIX_FMT_BGRA64BE => Pixel::BGRA64BE,
             AV_PIX_FMT_BGRA64LE => Pixel::BGRA64LE,
-
             AV_PIX_FMT_YVYU422 => Pixel::YVYU422,
-
             #[cfg(not(feature = "ffmpeg_4_0"))]
             AV_PIX_FMT_VDA => Pixel::VDA,
-
             AV_PIX_FMT_YA16BE => Pixel::YA16BE,
             AV_PIX_FMT_YA16LE => Pixel::YA16LE,
-
             AV_PIX_FMT_QSV => Pixel::QSV,
             AV_PIX_FMT_MMAL => Pixel::MMAL,
-
             AV_PIX_FMT_D3D11VA_VLD => Pixel::D3D11VA_VLD,
-
             AV_PIX_FMT_CUDA => Pixel::CUDA,
-
             AV_PIX_FMT_0RGB => Pixel::ZRGB,
             AV_PIX_FMT_RGB0 => Pixel::RGBZ,
             AV_PIX_FMT_0BGR => Pixel::ZBGR,
             AV_PIX_FMT_BGR0 => Pixel::BGRZ,
             AV_PIX_FMT_YUVA444P => Pixel::YUVA444P,
             AV_PIX_FMT_YUVA422P => Pixel::YUVA422P,
-
             AV_PIX_FMT_YUV420P12BE => Pixel::YUV420P12BE,
             AV_PIX_FMT_YUV420P12LE => Pixel::YUV420P12LE,
             AV_PIX_FMT_YUV420P14BE => Pixel::YUV420P14BE,
@@ -671,7 +648,6 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_GBRAP16BE => Pixel::GBRAP16BE,
             AV_PIX_FMT_GBRAP16LE => Pixel::GBRAP16LE,
             AV_PIX_FMT_YUVJ411P => Pixel::YUVJ411P,
-
             AV_PIX_FMT_BAYER_BGGR8 => Pixel::BAYER_BGGR8,
             AV_PIX_FMT_BAYER_RGGB8 => Pixel::BAYER_RGGB8,
             AV_PIX_FMT_BAYER_GBRG8 => Pixel::BAYER_GBRG8,
@@ -684,16 +660,13 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_BAYER_GBRG16BE => Pixel::BAYER_GBRG16BE,
             AV_PIX_FMT_BAYER_GRBG16LE => Pixel::BAYER_GRBG16LE,
             AV_PIX_FMT_BAYER_GRBG16BE => Pixel::BAYER_GRBG16BE,
-
             AV_PIX_FMT_YUV440P10LE => Pixel::YUV440P10LE,
             AV_PIX_FMT_YUV440P10BE => Pixel::YUV440P10BE,
             AV_PIX_FMT_YUV440P12LE => Pixel::YUV440P12LE,
             AV_PIX_FMT_YUV440P12BE => Pixel::YUV440P12BE,
             AV_PIX_FMT_AYUV64LE => Pixel::AYUV64LE,
             AV_PIX_FMT_AYUV64BE => Pixel::AYUV64BE,
-
             AV_PIX_FMT_VIDEOTOOLBOX => Pixel::VIDEOTOOLBOX,
-
             AV_PIX_FMT_P010LE => Pixel::P010LE,
             AV_PIX_FMT_P010BE => Pixel::P010BE,
             AV_PIX_FMT_GBRAP12BE => Pixel::GBRAP12BE,
@@ -707,9 +680,7 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_GRAY10LE => Pixel::GRAY10LE,
             AV_PIX_FMT_P016LE => Pixel::P016LE,
             AV_PIX_FMT_P016BE => Pixel::P016BE,
-
             AV_PIX_FMT_NB => Pixel::None,
-
             AV_PIX_FMT_D3D11 => Pixel::D3D11,
             AV_PIX_FMT_GRAY9BE => Pixel::GRAY9BE,
             AV_PIX_FMT_GRAY9LE => Pixel::GRAY9LE,
@@ -718,10 +689,8 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_GBRAPF32BE => Pixel::GBRAPF32BE,
             AV_PIX_FMT_GBRAPF32LE => Pixel::GBRAPF32LE,
             AV_PIX_FMT_DRM_PRIME => Pixel::DRM_PRIME,
-
             #[cfg(feature = "ffmpeg_4_0")]
             AV_PIX_FMT_OPENCL => Pixel::OPENCL,
-
             #[cfg(feature = "ffmpeg_4_1")]
             AV_PIX_FMT_GRAY14BE => Pixel::GRAY14BE,
             #[cfg(feature = "ffmpeg_4_1")]
@@ -730,7 +699,6 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_GRAYF32BE => Pixel::GRAYF32BE,
             #[cfg(feature = "ffmpeg_4_1")]
             AV_PIX_FMT_GRAYF32LE => Pixel::GRAYF32LE,
-
             #[cfg(feature = "ffmpeg_4_2")]
             AV_PIX_FMT_YUVA422P12BE => Pixel::YUVA422P12BE,
             #[cfg(feature = "ffmpeg_4_2")]
@@ -743,19 +711,16 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_NV24 => Pixel::NV24,
             #[cfg(feature = "ffmpeg_4_2")]
             AV_PIX_FMT_NV42 => Pixel::NV42,
-
             #[cfg(feature = "ffmpeg_4_3")]
             AV_PIX_FMT_VULKAN => Pixel::VULKAN,
             #[cfg(feature = "ffmpeg_4_3")]
             AV_PIX_FMT_Y210BE => Pixel::Y210BE,
             #[cfg(feature = "ffmpeg_4_3")]
             AV_PIX_FMT_Y210LE => Pixel::Y210LE,
-
             #[cfg(feature = "ffmpeg_4_4")]
             AV_PIX_FMT_X2RGB10LE => Pixel::X2RGB10LE,
             #[cfg(feature = "ffmpeg_4_4")]
             AV_PIX_FMT_X2RGB10BE => Pixel::X2RGB10BE,
-
             #[cfg(feature = "ffmpeg_5_0")]
             AV_PIX_FMT_X2BGR10LE => Pixel::X2BGR10LE,
             #[cfg(feature = "ffmpeg_5_0")]
@@ -776,7 +741,6 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_P416BE => Pixel::P416BE,
             #[cfg(feature = "ffmpeg_5_0")]
             AV_PIX_FMT_P416LE => Pixel::P416LE,
-
             #[cfg(feature = "ffmpeg_6_0")]
             AV_PIX_FMT_VUYA => Pixel::VUYA,
             #[cfg(feature = "ffmpeg_6_0")]
@@ -809,7 +773,6 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_RGBAF32BE => Pixel::RGBAF32BE,
             #[cfg(feature = "ffmpeg_6_0")]
             AV_PIX_FMT_RGBAF32LE => Pixel::RGBAF32LE,
-
             #[cfg(feature = "ffmpeg_6_1")]
             AV_PIX_FMT_P212BE => Pixel::P212BE,
             #[cfg(feature = "ffmpeg_6_1")]
@@ -822,10 +785,8 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_GBRAP14BE => Pixel::GBRAP14BE,
             #[cfg(feature = "ffmpeg_6_1")]
             AV_PIX_FMT_GBRAP14LE => Pixel::GBRAP14LE,
-
             #[cfg(feature = "ffmpeg_7_0")]
             AV_PIX_FMT_D3D12 => Pixel::D3D12,
-
             #[cfg(feature = "rpi")]
             AV_PIX_FMT_SAND128 => Pixel::SAND128,
             #[cfg(feature = "rpi")]
@@ -836,6 +797,21 @@ impl From<AVPixelFormat> for Pixel {
             AV_PIX_FMT_RPI4_8 => Pixel::RPI4_8,
             #[cfg(feature = "rpi")]
             AV_PIX_FMT_RPI4_10 => Pixel::RPI4_10,
+            AV_PIX_FMT_AYUV => panic!("AV_PIX_FMT_AYUV not implemented"),
+            AV_PIX_FMT_UYVA => panic!("AV_PIX_FMT_UYVA not implemented"),
+            AV_PIX_FMT_VYU444 => panic!("AV_PIX_FMT_VYU444 not implemented"),
+            AV_PIX_FMT_V30XBE => panic!("AV_PIX_FMT_V30XBE not implemented"),
+            AV_PIX_FMT_V30XLE => panic!("AV_PIX_FMT_V30XLE not implemented"),
+            AV_PIX_FMT_RGBF16BE => panic!("AV_PIX_FMT_RGBF16BE not implemented"),
+            AV_PIX_FMT_RGBF16LE => panic!("AV_PIX_FMT_RGBF16LE not implemented"),
+            AV_PIX_FMT_RGBA128BE => panic!("AV_PIX_FMT_RGBA128BE not implemented"),
+            AV_PIX_FMT_RGBA128LE => panic!("AV_PIX_FMT_RGBA128LE not implemented"),
+            AV_PIX_FMT_RGB96BE => panic!("AV_PIX_FMT_RGB96BE not implemented"),
+            AV_PIX_FMT_RGB96LE => panic!("AV_PIX_FMT_RGB96LE not implemented"),
+            AV_PIX_FMT_Y216BE => panic!("AV_PIX_FMT_Y216BE not implemented"),
+            AV_PIX_FMT_Y216LE => panic!("AV_PIX_FMT_Y216LE not implemented"),
+            AV_PIX_FMT_XV48BE => panic!("AV_PIX_FMT_XV48BE not implemented"),
+            AV_PIX_FMT_XV48LE => panic!("AV_PIX_FMT_XV48LE not implemented"),
         }
     }
 }
